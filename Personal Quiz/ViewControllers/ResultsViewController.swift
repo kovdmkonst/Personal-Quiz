@@ -9,24 +9,17 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-    // 1. Передать сюда массив с ответами
-    // 2. Определить наиболее часто встерчающийся тип живтоного
-    // 3. Отобразить результат в соответсвии с этим животным
-    // 4. Избавиться от кнопки в озврата назад на экране результатов
-    
+   
     @IBOutlet weak var emojiResultLabel: UILabel!
     @IBOutlet weak var textResultLabel: UILabel!
     
-    
     var transferredResults: [Answer]!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         mappingResults()
     }
-    
     
     func mappingResults() {
         let mappedResults = Array(transferredResults)
@@ -43,5 +36,4 @@ class ResultsViewController: UIViewController {
         emojiResultLabel.text = "Вы - \(answer.type.rawValue)"
         textResultLabel.text = answer.type.definition
     }
-    
 }
